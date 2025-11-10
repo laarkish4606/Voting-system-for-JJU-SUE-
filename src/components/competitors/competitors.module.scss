@@ -1,0 +1,30 @@
+@use "../../variables.scss" as mixed;
+.competitor_header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px;
+ 
+    p{
+        line-height: 1.5;
+        font-weight: 200;
+        word-wrap: break-word;
+        width: 500px;
+        color: mixed.$secondaryTextColor;
+        font-size: 20px;
+    }
+ 
+}
+   
+.competitors{
+        display: grid;
+        grid-template-columns:repeat(auto-fit,minmax(230px,1fr))
+       
+    }
+    @media only screen and (max-width:600px){
+        .competitor_header p{
+            width: 300px;
+            word-break: break-all;
+        }
+    }

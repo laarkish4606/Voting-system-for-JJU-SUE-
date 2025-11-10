@@ -1,0 +1,51 @@
+@use "../../variables.scss" as mixed;
+.info{
+  position: relative;
+  width: 190px;
+  height: 300px;
+.Competitor{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    .name{
+        font-size: 16px;
+        text-transform: capitalize;
+        font-weight: 600;
+    }
+    .region{
+        font-size: 13px;
+        flex-wrap: 500;
+    }
+    .vote{
+        font-size: 15;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+}
+.Vote{
+    position: absolute;
+    left: 0;
+    right: 3rem;
+   font-size: 1.6rem;
+   font-weight: 800;
+   background-color: mixed.$secondaryColor;
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-left: 12rem;
+   margin-top: 10px;
+   cursor: pointer;
+   color: black;
+   
+}
+
+
+ 
+}

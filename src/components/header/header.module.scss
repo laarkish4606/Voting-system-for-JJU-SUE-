@@ -1,0 +1,28 @@
+@use "../../variables.scss" as mixed;
+.Header{
+    ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    li{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+        color: mixed.$secondaryColor;
+        font-size:27px;
+        margin: 20px;
+        text-transform: capitalize;
+        font-weight: 700;
+    }
+    li .all_competitors a{
+        color: mixed.$secondaryColor;
+    }
+}
+@media only screen and (max-width:600px) {
+  ul li {
+    font-size: 20px; 
+  }
+}
+   

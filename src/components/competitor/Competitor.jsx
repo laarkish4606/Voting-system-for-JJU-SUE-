@@ -1,6 +1,6 @@
 import { setCurrentCompetitor, setInCreament } from "../../features/competitor/competitorSlice";
 import { handaleModal } from "../../features/modal/modalSlice";
-import competitors from "../competitors/Competitors"
+import competitors from "../../assets/competitors.json"
 import styles from "./competitor.module.scss"
 import { MdOutlineHowToVote } from "react-icons/md";
 import { useDispatch } from "react-redux";

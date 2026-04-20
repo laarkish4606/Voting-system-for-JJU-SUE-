@@ -1,0 +1,22 @@
+[
+  {
+    "q": "What is the JJU Online Voting System?",
+    "a": "The JJU Online Voting System is a secure and convenient platform designed to facilitate the student union elections at Jigjiga University."
+  },
+  {
+    "q": "Who is allowed to vote?",
+    "a": "Voting is restricted to officially registered students of Jigjiga University who have valid credentials."
+  },
+  {
+    "q": "When is voting open?",
+    "a": "Voting will be available from the scheduled start date and will remain open until the end date, after which no further votes will be accepted."
+  },
+  {
+    "q": "What happens if the internet disconnects while voting?",
+    "a": "If a connection is lost before the vote is successfully submitted, the vote will not be recorded. The user must reconnect and cast their vote again."
+  },
+  {
+    "q": "Is my vote secret?",
+    "a": "All votes are securely encrypted and anonymized, ensuring that no one can trace a vote back to an individual voter."
+  }
+]

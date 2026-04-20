@@ -1,11 +1,9 @@
-import { setCurrentCompetitor, setInCreament } from "../../features/competitor/competitorSlice";
-import { handaleModal } from "../../features/modal/modalSlice";
-import competitors from "../../assets/competitors.json"
-import styles from "./competitor.module.scss"
 import { MdOutlineHowToVote } from "react-icons/md";
 import { useDispatch } from "react-redux";
+import { setCurrentCompetitor } from "../../features/competitor/competitorSlice";
+import { handaleModal } from "../../features/modal/modalSlice";
+import styles from "./competitor.module.scss";
 const Competitor = ({competitor}) => {
-
 
   // clicking on vote icon function
   const dispatch=useDispatch();
@@ -16,7 +14,7 @@ const Competitor = ({competitor}) => {
   }
 
 
-    const backgroundStyle = {
+  const backgroundStyle = {
   width: "100%",
   height: "300px",
   background: `linear-gradient(0deg, #128b4871, rgba(0,0,0,0) 60%, rgba(0,0,0,0)), url(${competitor.image})`,
@@ -28,9 +26,10 @@ const Competitor = ({competitor}) => {
     <div className={styles.info} style={backgroundStyle}>
         <div className={styles.Competitor}>
             <span className={styles.name}>
-                {competitor.name}
+                Name: {competitor.name}
             </span>
-            <span className={styles.region}>{competitor.region}</span>
+            <span className={styles.gpa}>GPA: {competitor.gpa}</span>
+            <span className={styles.gpa}>Department: {competitor.department}</span>
             <span className={styles.vote}>Total votes: {competitor.votes}</span>
 
         </div>

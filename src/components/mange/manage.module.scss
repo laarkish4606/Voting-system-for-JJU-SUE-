@@ -1,0 +1,230 @@
+@use "../../variables.scss" as mixed;
+.container {
+  padding: 25px;
+  min-height: 100vh;
+ margin-left: 5rem;
+ margin-right: 5rem;
+}
+
+
+.manage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+  h1 {
+    font-size: 32px;
+    font-weight: 600;
+    font-family:"inter", sans-serif;
+     color: mixed.$primaryTextColor;
+  }
+
+  button {
+    font-size: 18px;
+    background:mixed.$secondaryColor;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+  }
+}
+
+.candidates {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px;
+ 
+}
+.info{
+  margin: 7px ;
+  h3{
+    font-size: 18px;
+    font-weight: 400;
+   color:mixed.$primaryColor;
+  }
+  span{
+    color: mixed.$primaryColor;
+    font-size: 18px;
+     font-weight: 400;
+  }
+}
+
+.card {
+  border-radius: 18px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  }
+}
+
+
+.image {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+
+ h3{
+    font-size: 20px;
+    font-weight: 600;
+    color:black;
+  }
+
+  span {
+    color: #ddd;
+    font-size: 13px;
+  }
+}
+
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+
+  button {
+    flex: 1;
+    margin: 0 5px;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+}
+
+.edit {
+  background:mixed.$secondaryColor;
+  color: white;
+
+  &:hover {
+    background: #218838;
+  }
+}
+
+.delete {
+  background: #dc3545;
+  color: white;
+
+  &:hover {
+    background: #c82333;
+  }
+}
+
+.modalWrapper {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+
+  .modalBox {
+    background: white;
+    border-radius: 15px;
+    width: 420px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 20px;
+
+    animation: fadeIn 0.3s ease;
+  }
+
+  .modalContent {
+    margin-top: 20px;
+  }
+
+  .closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    width: 35px;
+    height: 35px;
+
+    background:mixed.$secondaryColor;
+    border: none;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 10; 
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .manage {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

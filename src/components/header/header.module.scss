@@ -1,28 +1,96 @@
 @use "../../variables.scss" as mixed;
-.Header{
-    ul{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  height: 50px;
+
+  background:mixed.$secondaryColor;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      object-fit: cover;
     }
-    li{
-        list-style: none;
+
+    h1 {
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
-    a{
-        text-decoration: none;
-        color: mixed.$secondaryColor;
-        font-size:27px;
-        margin: 20px;
-        text-transform: capitalize;
-        font-weight: 700;
+  }
+
+  nav {
+    ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+
+      li {
+        .getStarted{
+          background-color: rgba(0, 0, 0, 0.1);
+          color: white;
+          padding: 8px 16px;
+          border-radius: 8px;
+          transition: all 0.3s ease;
+          border: 1px solid #ffff;
+
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+            color: white;
+            text-decoration: none;
+          }
+        }
+
+        a {
+          text-decoration: none;
+          color: #ffff;
+          font-size: 16px;
+          font-weight: 600;
+          padding: 8px 12px;
+          border-radius: 8px;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+            color: #ffff;
+          }
+
+          &.active {
+            background-color: black;
+            color: white;
+          }
+        }
+      }
     }
-    li .all_competitors a{
-        color: mixed.$secondaryColor;
-    }
-}
-@media only screen and (max-width:600px) {
-  ul li {
-    font-size: 20px; 
   }
 }
-   
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+}

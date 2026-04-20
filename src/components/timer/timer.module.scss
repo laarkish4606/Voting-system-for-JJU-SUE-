@@ -1,13 +1,20 @@
 @use "../../variables.scss" as mixed;
 
 .cunter_down{
+    .completion{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: green;
+    text-align: center;
+    margin-top: 20px;
+}
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     margin-top: 20px;
     h1{
-        font-size:30px;
+        font-size:34px;
         text-transform: uppercase;
         font-weight: 700;
     }
@@ -25,6 +32,7 @@
         .digit{
         font-size:3rem;
         font-weight: 800;
+        margin: 7px;
     }
       .text{
         font-size: 1rem;

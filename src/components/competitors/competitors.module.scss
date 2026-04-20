@@ -4,24 +4,34 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 20px;
+    margin: 30px;
+   
  
     p{
         line-height: 1.5;
         font-weight: 200;
         word-wrap: break-word;
-        width: 500px;
+        width: 900px;
         color: mixed.$secondaryTextColor;
         font-size: 20px;
+    }
+    span{
+        font-size: 30px;
+        font-weight: 600;
+        color: #ffff;
     }
  
 }
    
-.competitors{
-        display: grid;
-        grid-template-columns:repeat(auto-fit,minmax(230px,1fr))
-       
-    }
+.competitors {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  max-width: 1000px;
+  margin: 20px auto;
+  gap: 20px;
+}
+
+
     @media only screen and (max-width:600px){
         .competitor_header p{
             width: 300px;

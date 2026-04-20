@@ -4,13 +4,13 @@ import Countdown from 'react-countdown';
 
 const Timer = () => {
 
-   const Completion = () => <span>You are good to go!</span>;
+  const Completion = () => <span className={styles.completion}>Your voting process is complete and securely recorded.Thank you for participating!</span>;
 
 // Renderer callback with condition
 const renderer = ({ days,hours, minutes, seconds, completed }) => {
   if (completed) {
     // Render a completed state
-    return <Completion />;
+    return <Completion/>;
   } else {
     // Render a countdown
     return <Times days={days} hours={hours}minutes={minutes}seconds={seconds}/>
@@ -22,7 +22,7 @@ const renderer = ({ days,hours, minutes, seconds, completed }) => {
   return (
     <div className={styles.cunter_down}>
           <Countdown
-    date={Date.now() + 2592000000}
+    date={Date.now() + 60*1000}
     renderer={renderer}
   />
         

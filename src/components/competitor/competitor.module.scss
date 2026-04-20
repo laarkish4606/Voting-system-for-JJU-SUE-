@@ -14,11 +14,12 @@
     .name{
         font-size: 16px;
         text-transform: capitalize;
-        font-weight: 600;
+        font-weight: 500;
     }
-    .region{
-        font-size: 13px;
-        flex-wrap: 500;
+    .gpa{
+        font-size: 16px;
+        // flex-wrap: 500;
+        font-weight: 500;
     }
     .vote{
         font-size: 15;
@@ -28,13 +29,13 @@
 }
 .Vote{
     position: absolute;
-    left: 0;
+    left: 5rem;
     right: 3rem;
    font-size: 1.6rem;
    font-weight: 800;
    background-color: mixed.$secondaryColor;
-   width: 30px;
-   height: 30px;
+   width: 40px;
+   height: 40px;
    border-radius: 50%;
    display: flex;
    justify-content: center;

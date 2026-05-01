@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState={
-        competitors:JSON.parse(window.localStorage.getItem('competitors'))||competitors,
+        // competitors:JSON.parse(window.localStorage.getItem('competitors'))||competitors,
         currentCompetitor:null,
         CandidateName:"",
         Department:"",
@@ -83,19 +83,18 @@ const competitor=createSlice({
 },
 
 
-        addToCompetitors:(state,action)=>{
-         
-           let compIndex=state.competitors.findIndex(comp=> comp.id ===
-            action.payload
-           )
-         
-           state.competitors[compIndex].votes=
-           Number(state.competitors[compIndex].votes)+Number(state.votCount)
-           window.localStorage.setItem('competitors',JSON.stringify(state.competitors)
-           )
-        
+        addToCompetitors: (state, action) => {
+  const compIndex = state.competitors.findIndex(
+    comp => comp._id === action.payload
+  );
 
-        },
+  if (compIndex === -1) return;
+
+  state.competitors[compIndex].votes =
+    Number(state.competitors[compIndex].votes || 0) +
+    Number(state.votCount);
+},
+
         reset:(state)=>{
             state.currentCompetitor=null,
             state.votCount= 0

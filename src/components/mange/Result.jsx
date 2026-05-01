@@ -1,10 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import print from "../../assets/print.png"
 import styles from "./result.module.scss"
 import { useSelector } from 'react-redux'
+import axios from 'axios'
 const Result = () => {
-  const {competitors}=useSelector((state)=>state.competitor);
-  console.log(competitors)
+
+  
+const [candidates, setCandidates] = useState([]);
+
+useEffect(() => {
+  const fetchCandidates = async () => {
+    try {
+      const { data } = await axios.get("/api/user/candidate");
+      console.log(data);
+      setCandidates(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
+  fetchCandidates();
+}, []);
+ 
   return (
     <div className={styles.container}>
       <div className={styles.result}>
@@ -12,19 +30,19 @@ const Result = () => {
         <img src={print} alt="Print" />
       </div>
       <div className={styles.candidates}>
-  {competitors.map((competitor) => (
-    <div className={styles.card} key={competitor.id}>
+  {candidates.map((candidate) => (
+    <div className={styles.card} key={candidate.id}>
       
       <div
         className={styles.image}
-        style={{ backgroundImage: `url(${competitor.image})` }}
+        style={{ backgroundImage: `url(http://localhost:8000/${candidate.img})`}}
       />
       <div className={styles.info}>
-        <h3>{competitor.name}</h3>
-        <p>{competitor.region}</p>
+        <h3>{candidate.name}</h3>
+        <p>{candidate.region}</p>
       </div>
       <div className={styles.status}>
-        {competitor.votes > 70 ? (
+        {candidate.voteCount > 70 ? (
           <span className={styles.winner}>winner.</span>
         ) : (
           <span className={styles.leading}>leading...</span>
@@ -33,8 +51,8 @@ const Result = () => {
 
       
       <div className={styles.stats}>
-        <h2>{competitor.votes}%</h2>
-        <p>Votes: {competitor.votes}</p>
+        <h2>{candidate.votes}%</h2>
+        <p>Votes: {candidate.votes}</p>
       </div>
 
     </div>
